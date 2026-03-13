@@ -1,8 +1,11 @@
+import { Link as RouterLink } from 'react-router';
+
 import { motion } from 'motion/react';
 import {
   Avatar,
   BackgroundBeams,
   Box,
+  Button,
   Code,
   Container,
   Flex,
@@ -93,6 +96,12 @@ export default function Route() {
                   npm install pittorica
                 </Code>
               </Box>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <Button as={RouterLink} to="/docs" size="4" color="orange">
+                Quick Start
+              </Button>
             </motion.div>
           </Flex>
         </motion.div>

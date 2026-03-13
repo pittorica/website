@@ -17,6 +17,7 @@ import {
 
 import {
   IconAlertTriangle,
+  IconBook,
   IconBrandGithub,
   IconComponents,
   IconHome,
@@ -178,8 +179,52 @@ export function Layout({ children }: { children: React.ReactNode }) {
             side="left"
             title="Navigation"
           >
-            <Flex direction="column" gap="4" p="4">
-              {/* Navigation items will go here */}
+            <Flex direction="column" gap="2" p="4">
+              <Button
+                as={RouterLink}
+                to="/"
+                variant="text"
+                color="indigo"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconHome size={18} />
+                Home
+              </Button>
+              <Button
+                as={RouterLink}
+                to="/docs"
+                variant="text"
+                color="indigo"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconBook size={18} />
+                Documentation
+              </Button>
+              <Button
+                as={RouterLink}
+                to="/components"
+                variant="text"
+                color="indigo"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconComponents size={18} />
+                Components
+              </Button>
+              <Button
+                as="a"
+                href="https://github.com/pittorica/pittorica"
+                target="_blank"
+                variant="text"
+                color="indigo"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconBrandGithub size={18} />
+                GitHub
+              </Button>
             </Flex>
           </Sheet>
 

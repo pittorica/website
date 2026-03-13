@@ -51,6 +51,7 @@ import {
 import './app.css';
 
 import type { Route } from './+types/root';
+import { COMPONENTS, toKebabCase } from './consts/components';
 import { THEME_SOURCE_COLOR } from './consts/theme';
 
 export const links: Route.LinksFunction = () => [
@@ -182,7 +183,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             side="left"
             title="Navigation"
           >
-            <Flex direction="column" gap="2" p="4">
+            <Flex
+              direction="column"
+              gap="2"
+              p="4"
+              style={{ maxHeight: '100dvh', overflowY: 'auto' }}
+            >
               <Button
                 as={RouterLink}
                 to="/"
@@ -193,6 +199,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <IconHome size={18} />
                 Home
               </Button>
+
+              <Heading size="4" weight="bold" p="2" mt="2">
+                Docs
+              </Heading>
               <Button
                 as={RouterLink}
                 to="/docs/get-started"
@@ -233,6 +243,39 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <IconCode size={18} />
                 Design Tokens
               </Button>
+
+              <Heading size="4" weight="bold" p="2" mt="2">
+                Components
+              </Heading>
+              <Button
+                as={RouterLink}
+                to="/components"
+                variant="tonal"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconComponents size={18} />
+                View All
+              </Button>
+              <Flex direction="column" gap="1" pl="2">
+                {COMPONENTS.map((comp: string) => (
+                  <Button
+                    key={comp}
+                    as={RouterLink}
+                    to={`/components/${toKebabCase(comp)}`}
+                    variant="text"
+                    size="1"
+                    onClick={() => setIsSheetOpen(false)}
+                    style={{ justifyContent: 'flex-start' }}
+                  >
+                    {comp}
+                  </Button>
+                ))}
+              </Flex>
+
+              <Heading size="4" weight="bold" p="2" mt="2">
+                Community
+              </Heading>
               <Button
                 as="a"
                 href="https://github.com/pittorica/pittorica"

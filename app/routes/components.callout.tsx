@@ -1,0 +1,16 @@
+import { Flex, Heading, Section } from 'pittorica/react';
+
+export default function CalloutPage() {
+  return (
+    <Section>
+      <Flex direction="column" gap="4">
+        <Heading size="8" weight="bold">
+          Callout
+        </Heading>
+        <Heading as="p" size="4">
+          The Callout component.
+        </Heading>
+      </Flex>
+    </Section>
+  );
+}

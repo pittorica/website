@@ -11,6 +11,7 @@ import {
   Button,
   Callout,
   Card,
+  Carousel,
   Checkbox,
   Chip,
   Code,
@@ -121,6 +122,119 @@ export default function Route() {
               </motion.div>
             </Flex>
           </motion.div>
+        </Container>
+      </Section>
+
+      <Section p="9">
+        <Container maxWidth="lg">
+          <Flex direction="column" gap="8">
+            <Flex direction="column" gap="2">
+              <Heading size="8" weight="bold">
+                Visual Showcase
+              </Heading>
+              <Heading
+                as="p"
+                size="4"
+                weight="regular"
+                style={{ opacity: 0.6 }}
+              >
+                Experience the painterly aesthetic through our curated gallery.
+              </Heading>
+            </Flex>
+
+            <Carousel.Root defaultIndex={0}>
+              <Carousel.Item
+                src="/static/gallery/jc-gellidon-vP3ORiYUBTY-unsplash.jpg"
+                alt="Gallery Image 1"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Abstract Forms
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/john-zhou-o_u0XTbvrPc-unsplash.jpg"
+                alt="Gallery Image 2"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Natural Textures
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/julien-BAR9_WJTcNI-unsplash.jpg"
+                alt="Gallery Image 3"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Urban Perspective
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/land-o-lakes-inc-1w3tO5F8HYY-unsplash.jpg"
+                alt="Gallery Image 4"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Rural Serenity
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/mitchell-orr-7eFWNqPToxk-unsplash.jpg"
+                alt="Gallery Image 5"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Geometric Harmony
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/nir-himi-w_rVpVZGa3g-unsplash.jpg"
+                alt="Gallery Image 6"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Ethereal Glow
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/patrick-untersee-j3f1lwXBuAI-unsplash.jpg"
+                alt="Gallery Image 7"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Mountain Majesty
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/petar-avramoski-YKTIzSSd4ug-unsplash.jpg"
+                alt="Gallery Image 8"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Architectural Depth
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+              <Carousel.Item
+                src="/static/gallery/willian-justen-de-vasconcellos-jxnHGSSQENo-unsplash.jpg"
+                alt="Gallery Image 9"
+              >
+                <Carousel.Description>
+                  <Heading size="3" weight="bold">
+                    Dynamic Motion
+                  </Heading>
+                </Carousel.Description>
+              </Carousel.Item>
+            </Carousel.Root>
+          </Flex>
         </Container>
       </Section>
 

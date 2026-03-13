@@ -21,7 +21,9 @@ import {
   IconComponents,
   IconHome,
   IconLayoutSidebarLeftExpand,
+  IconMoon,
   IconRefresh,
+  IconSun,
 } from '@tabler/icons-react';
 
 import { motion } from 'motion/react';
@@ -73,6 +75,11 @@ export const meta: Route.MetaFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [appearance, setAppearance] = useState<'light' | 'dark'>('light');
+
+  const toggleAppearance = () => {
+    setAppearance((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   return (
     <html lang="en">
@@ -83,7 +90,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="pittorica-theme">
-        <PittoricaTheme appearance="light" sourceColor={THEME_SOURCE_COLOR}>
+        <PittoricaTheme
+          appearance={appearance}
+          sourceColor={THEME_SOURCE_COLOR}
+        >
           <Flex
             as="header"
             align="center"
@@ -127,6 +137,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </Flex>
 
               <Flex align="center" gap="4">
+                <IconButton
+                  variant="text"
+                  color="indigo"
+                  size="3"
+                  onClick={toggleAppearance}
+                >
+                  {appearance === 'light' ? (
+                    <IconMoon size={20} />
+                  ) : (
+                    <IconSun size={20} />
+                  )}
+                </IconButton>
                 <Button
                   as={RouterLink}
                   to="/components"

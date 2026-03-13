@@ -134,7 +134,7 @@ export default function Route() {
             </Flex>
 
             <Grid columns={{ initial: '1', sm: '2', md: '3' }} gap="6">
-              <Card>
+              <Card p="2">
                 <Flex direction="column" gap="4">
                   <Heading size="4" weight="bold">
                     Interactive
@@ -156,7 +156,7 @@ export default function Route() {
                 </Flex>
               </Card>
 
-              <Card>
+              <Card p="2">
                 <Flex direction="column" gap="4">
                   <Heading size="4" weight="bold">
                     Status & Labels
@@ -181,7 +181,7 @@ export default function Route() {
                 </Flex>
               </Card>
 
-              <Card>
+              <Card p="2">
                 <Flex direction="column" gap="4">
                   <Heading size="4" weight="bold">
                     Typography

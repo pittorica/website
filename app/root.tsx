@@ -18,11 +18,13 @@ import {
 import {
   IconAlertTriangle,
   IconBrandGithub,
+  IconCode,
   IconComponents,
   IconHome,
   IconLayoutSidebarLeftExpand,
   IconMoon,
   IconPackage,
+  IconPalette,
   IconRefresh,
   IconRocket,
   IconSun,
@@ -210,6 +212,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
               >
                 <IconPackage size={18} />
                 Installation
+              </Button>
+              <Button
+                as={RouterLink}
+                to="/docs/theming"
+                variant="tonal"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconPalette size={18} />
+                Theming
+              </Button>
+              <Button
+                as={RouterLink}
+                to="/docs/tokens"
+                variant="tonal"
+                onClick={() => setIsSheetOpen(false)}
+                style={{ justifyContent: 'flex-start' }}
+              >
+                <IconCode size={18} />
+                Design Tokens
               </Button>
               <Button
                 as="a"

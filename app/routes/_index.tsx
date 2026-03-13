@@ -1,5 +1,7 @@
 import { Link as RouterLink } from 'react-router';
 
+import { IconInfoCircle, IconMail, IconSearch } from '@tabler/icons-react';
+
 import { motion } from 'motion/react';
 import {
   Avatar,
@@ -7,17 +9,24 @@ import {
   Badge,
   Box,
   Button,
+  Callout,
   Card,
+  Checkbox,
   Chip,
   Code,
   Container,
+  DataList,
   Flex,
   Grid,
   Heading,
   HeroText,
+  Kbd,
+  Progress,
   Section,
+  SegmentedControl,
   Slider,
   Switch,
+  TextField,
 } from 'pittorica/react';
 
 export default function Route() {
@@ -196,6 +205,101 @@ export default function Route() {
                         Learn More
                       </Button>
                     </Box>
+                  </Flex>
+                </Flex>
+              </Card>
+
+              <Card p="2">
+                <Flex direction="column" gap="4">
+                  <Heading size="4" weight="bold">
+                    Information
+                  </Heading>
+                  <Flex direction="column" gap="4">
+                    <Callout color="info" size="sm">
+                      <Callout.Icon>
+                        <IconInfoCircle />
+                      </Callout.Icon>
+                      <Callout.Text>
+                        Tip: You can use Pittorica tokens directly in your CSS.
+                      </Callout.Text>
+                    </Callout>
+                    <Flex direction="column" gap="2">
+                      <Flex justify="between" align="center">
+                        <Heading as="span" size="2">
+                          Installation
+                        </Heading>
+                        <Heading as="span" size="2" color="slate">
+                          75%
+                        </Heading>
+                      </Flex>
+                      <Progress value={75} color="indigo" />
+                    </Flex>
+                    <Flex gap="2" align="center">
+                      <Heading as="span" size="2">
+                        Shortcut:
+                      </Heading>
+                      <Kbd>⌘ K</Kbd>
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Card>
+
+              <Card p="2">
+                <Flex direction="column" gap="4">
+                  <Heading size="4" weight="bold">
+                    Forms
+                  </Heading>
+                  <Flex direction="column" gap="4">
+                    <TextField.Root label="Search" size="sm">
+                      <TextField.Slot>
+                        <IconSearch size={16} />
+                      </TextField.Slot>
+                      <TextField.Input placeholder="Find components..." />
+                    </TextField.Root>
+                    <TextField.Root label="Email" size="sm" error>
+                      <TextField.Slot>
+                        <IconMail size={16} />
+                      </TextField.Slot>
+                      <TextField.Input placeholder="enter your email" />
+                    </TextField.Root>
+                    <Flex gap="4">
+                      <Checkbox label="Accept terms" defaultChecked />
+                      <Checkbox label="Newsletter" />
+                    </Flex>
+                  </Flex>
+                </Flex>
+              </Card>
+
+              <Card p="2">
+                <Flex direction="column" gap="4">
+                  <Heading size="4" weight="bold">
+                    Advanced
+                  </Heading>
+                  <Flex direction="column" gap="4">
+                    <SegmentedControl.Root defaultValue="all" color="orange">
+                      <SegmentedControl.Item value="all">
+                        All
+                      </SegmentedControl.Item>
+                      <SegmentedControl.Item value="new">
+                        New
+                      </SegmentedControl.Item>
+                      <SegmentedControl.Item value="pro">
+                        Pro
+                      </SegmentedControl.Item>
+                    </SegmentedControl.Root>
+
+                    <DataList orientation="vertical">
+                      <DataList.Item>
+                        <DataList.Label>Version</DataList.Label>
+                        <DataList.Value>
+                          <Badge>v0.28.0</Badge>
+                        </DataList.Value>
+                      </DataList.Item>
+                      <DataList.Item>
+                        <DataList.Label>License</DataList.Label>
+                        <DataList.Value>MIT</DataList.Value>
+                      </DataList.Item>
+                    </DataList>
                   </Flex>
                 </Flex>
               </Card>

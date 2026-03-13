@@ -116,9 +116,20 @@ export default function Route() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <Button as={RouterLink} to="/docs" size="4" color="orange">
-                  Quick Start
-                </Button>
+                <Flex gap="4" wrap="wrap" justify="center">
+                  <Button as={RouterLink} to="/docs" size="4" color="orange">
+                    Quick Start
+                  </Button>
+                  <Button
+                    as={RouterLink}
+                    to="/components"
+                    variant="tonal"
+                    size="4"
+                    color="indigo"
+                  >
+                    Browse Components
+                  </Button>
+                </Flex>
               </motion.div>
             </Flex>
           </motion.div>

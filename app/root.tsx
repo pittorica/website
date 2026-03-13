@@ -158,7 +158,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   as={RouterLink}
                   to="/components"
                   color="orange"
-                  size="2"
+                  size="3"
                 >
                   <IconComponents size={18} />
                   Components
@@ -183,18 +183,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
             side="left"
             title="Navigation"
           >
-            <Flex
-              direction="column"
-              gap="2"
-              p="4"
-              style={{ maxHeight: '100dvh', overflowY: 'auto' }}
-            >
+            <Flex direction="column" gap="2" p="4">
               <Button
                 as={RouterLink}
                 to="/"
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconHome size={18} />
                 Home
@@ -209,6 +205,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconRocket size={18} />
                 Quick start
@@ -219,6 +216,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconPackage size={18} />
                 Installation
@@ -229,6 +227,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconPalette size={18} />
                 Theming
@@ -239,6 +238,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconCode size={18} />
                 Design Tokens
@@ -253,6 +253,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconComponents size={18} />
                 View All
@@ -264,7 +265,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     as={RouterLink}
                     to={`/components/${toKebabCase(comp)}`}
                     variant="text"
-                    size="1"
+                    size="2"
                     onClick={() => setIsSheetOpen(false)}
                     style={{ justifyContent: 'flex-start' }}
                   >
@@ -283,6 +284,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
+                size="3"
               >
                 <IconBrandGithub size={18} />
                 GitHub

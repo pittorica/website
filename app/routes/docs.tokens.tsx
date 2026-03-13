@@ -9,6 +9,22 @@ import {
 } from 'pittorica/react';
 
 export default function DesignTokensPage() {
+  const colors = [
+    'amber',
+    'blue',
+    'crimson',
+    'gray',
+    'indigo',
+    'orange',
+    'pink',
+    'purple',
+    'red',
+    'slate',
+    'teal',
+  ];
+
+  const semantics = ['info', 'success', 'warning', 'danger', 'error'];
+
   return (
     <Flex direction="column" gap="6">
       <Section>
@@ -17,7 +33,8 @@ export default function DesignTokensPage() {
             Design Tokens
           </Heading>
           <Heading as="p" size="4" weight="regular" style={{ opacity: 0.8 }}>
-            Pure CSS variables at the heart of everything.
+            A comprehensive reference of every CSS variable available in
+            Pittorica.
           </Heading>
         </Flex>
       </Section>
@@ -27,53 +44,94 @@ export default function DesignTokensPage() {
       <Section>
         <Flex direction="column" gap="4">
           <Heading size="6" weight="bold">
-            What are Design Tokens?
+            Base Colors
           </Heading>
-          <Text as="p">
-            Pittorica exposes its entire design system via CSS custom
-            properties. This allows you to use the framework's values directly
-            in your own styles, ensuring consistency even outside of React
-            components.
-          </Text>
-        </Flex>
-      </Section>
-
-      <Section>
-        <Flex direction="column" gap="4">
-          <Heading size="6" weight="bold">
-            Colors
-          </Heading>
-          <Text as="p">
-            Pittorica uses a dynamic color system. Semantic tokens automatically
-            adapt to the current appearance (light/dark).
-          </Text>
           <DataList orientation="vertical">
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-white</Code>
               </DataList.Label>
-              <DataList.Value>The primary light base color.</DataList.Value>
+              <DataList.Value>Primary light base (#edede9)</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-black</Code>
               </DataList.Label>
-              <DataList.Value>The primary dark base color.</DataList.Value>
+              <DataList.Value>Primary dark base (#000814)</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-source-color</Code>
               </DataList.Label>
               <DataList.Value>
-                The base color driving the dynamic theme.
+                The user-defined base color for the theme.
               </DataList.Value>
             </DataList.Item>
+          </DataList>
+        </Flex>
+      </Section>
+
+      <Section>
+        <Flex direction="column" gap="4">
+          <Heading size="6" weight="bold">
+            Color Palettes
+          </Heading>
+          <Text as="p">
+            Each color below has 10 steps (1-9, 11) and corresponding contrast
+            tokens (e.g., <Code>--pittorica-indigo-1</Code> and{' '}
+            <Code>--pittorica-on-indigo-1</Code>).
+          </Text>
+          <DataList orientation="vertical">
+            {colors.map((color) => (
+              <DataList.Item key={color}>
+                <DataList.Label>
+                  <Code>--pittorica-{color}-[1-11]</Code>
+                </DataList.Label>
+                <DataList.Value>
+                  Full 10-step palette for {color}.
+                </DataList.Value>
+              </DataList.Item>
+            ))}
+          </DataList>
+        </Flex>
+      </Section>
+
+      <Section>
+        <Flex direction="column" gap="4">
+          <Heading size="6" weight="bold">
+            Semantic Tokens
+          </Heading>
+          <DataList orientation="vertical">
+            {semantics.map((semantic) => (
+              <DataList.Item key={semantic}>
+                <DataList.Label>
+                  <Code>--pittorica-{semantic}</Code>
+                </DataList.Label>
+                <DataList.Value>
+                  The base semantic color for {semantic}.
+                </DataList.Value>
+              </DataList.Item>
+            ))}
+          </DataList>
+        </Flex>
+      </Section>
+
+      <Section>
+        <Flex direction="column" gap="4">
+          <Heading size="6" weight="bold">
+            Surface System
+          </Heading>
+          <Text as="p">
+            Adaptive surface levels that handle background elevation and
+            contrast automatically.
+          </Text>
+          <DataList orientation="vertical">
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-surface-[0-9]</Code>
               </DataList.Label>
               <DataList.Value>
-                Layered surface colors based on the source color.
+                Steps 0-9 of the adaptive surface background.
               </DataList.Value>
             </DataList.Item>
             <DataList.Item>
@@ -81,7 +139,7 @@ export default function DesignTokensPage() {
                 <Code>--pittorica-on-surface-[0-9]</Code>
               </DataList.Label>
               <DataList.Value>
-                High-contrast text/icon colors for each surface level.
+                Adaptive content colors for each surface level.
               </DataList.Value>
             </DataList.Item>
           </DataList>
@@ -98,29 +156,31 @@ export default function DesignTokensPage() {
               <DataList.Label>
                 <Code>--pittorica-font-family</Code>
               </DataList.Label>
-              <DataList.Value>The base interface font stack.</DataList.Value>
+              <DataList.Value>Inter Variable stack</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-font-heading</Code>
               </DataList.Label>
-              <DataList.Value>The primary font for headings.</DataList.Value>
+              <DataList.Value>Momo Trust Display stack</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-font-code</Code>
               </DataList.Label>
-              <DataList.Value>
-                The monospace stack for code and UI elements.
-              </DataList.Value>
+              <DataList.Value>Iosevka Etoile stack</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-font-size-[1-9]</Code>
               </DataList.Label>
-              <DataList.Value>
-                The 9-step responsive typographic scale.
-              </DataList.Value>
+              <DataList.Value>12px to 60px scale</DataList.Value>
+            </DataList.Item>
+            <DataList.Item>
+              <DataList.Label>
+                <Code>--pittorica-line-height-[1-9]</Code>
+              </DataList.Label>
+              <DataList.Value>16px to 1.1 scale</DataList.Value>
             </DataList.Item>
           </DataList>
         </Flex>
@@ -129,24 +189,20 @@ export default function DesignTokensPage() {
       <Section>
         <Flex direction="column" gap="4">
           <Heading size="6" weight="bold">
-            Layout & Spacing
+            Space & Layout
           </Heading>
           <DataList orientation="vertical">
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-space-[0-9]</Code>
               </DataList.Label>
-              <DataList.Value>
-                The 10-step proportional spacing scale (4px base).
-              </DataList.Value>
+              <DataList.Value>0px to 96px proportional scale</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-bp-[xs-xl]</Code>
               </DataList.Label>
-              <DataList.Value>
-                Responsive breakpoints for containers and grids.
-              </DataList.Value>
+              <DataList.Value>520px to 1640px breakpoints</DataList.Value>
             </DataList.Item>
           </DataList>
         </Flex>
@@ -155,47 +211,22 @@ export default function DesignTokensPage() {
       <Section>
         <Flex direction="column" gap="4">
           <Heading size="6" weight="bold">
-            Visual Style
+            Radius & Shadows
           </Heading>
           <DataList orientation="vertical">
             <DataList.Item>
               <DataList.Label>
-                <Code>--pittorica-radius-[none-full]</Code>
+                <Code>--pittorica-radius-[small-full]</Code>
               </DataList.Label>
-              <DataList.Value>
-                The "painterly" curvature tokens for components.
-              </DataList.Value>
+              <DataList.Value>4px to 9999px curvature</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label>
                 <Code>--pittorica-shadow-[1-9]</Code>
               </DataList.Label>
-              <DataList.Value>
-                Elevation tokens that adapt to light/dark modes.
-              </DataList.Value>
+              <DataList.Value>Adaptive elevation shadow scale</DataList.Value>
             </DataList.Item>
           </DataList>
-        </Flex>
-      </Section>
-
-      <Section>
-        <Flex direction="column" gap="4">
-          <Heading size="6" weight="bold">
-            Usage in CSS
-          </Heading>
-          <Text as="p">
-            You can access these tokens in any CSS file after importing the core
-            styles:
-          </Text>
-          <Code language="css">{`
-.my-custom-component {
-  background-color: var(--pittorica-surface-1);
-  border: 1px solid var(--pittorica-slate-3);
-  border-radius: var(--pittorica-radius-medium);
-  padding: var(--pittorica-space-4);
-  color: var(--pittorica-on-surface-1);
-}
-`}</Code>
         </Flex>
       </Section>
     </Flex>

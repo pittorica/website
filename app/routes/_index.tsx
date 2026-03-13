@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import {
   Avatar,
+  BackgroundBeams,
   Box,
   Code,
   Container,
@@ -38,9 +39,12 @@ export default function Route() {
         minHeight: 'calc(100dvh - 56px)',
         display: 'flex',
         alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <Container maxWidth="lg">
+      <BackgroundBeams />
+      <Container maxWidth="lg" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"

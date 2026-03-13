@@ -193,7 +193,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </Button>
               <Button
                 as={RouterLink}
-                to="/docs"
+                to="/docs/get-started"
                 variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}

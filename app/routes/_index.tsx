@@ -117,7 +117,12 @@ export default function Route() {
 
               <motion.div variants={itemVariants}>
                 <Flex gap="4" wrap="wrap" justify="center">
-                  <Button as={RouterLink} to="/docs" size="4" color="orange">
+                  <Button
+                    as={RouterLink}
+                    to="/docs/get-started"
+                    size="4"
+                    color="orange"
+                  >
                     Quick Start
                   </Button>
                   <Button

@@ -5,6 +5,7 @@ import {
   Code,
   Container,
   Flex,
+  Heading,
   HeroText,
   Section,
 } from 'pittorica/react';
@@ -45,7 +46,7 @@ export default function Route() {
           initial="hidden"
           animate="visible"
         >
-          <Flex direction="column" align="center" justify="center" gap="9">
+          <Flex direction="column" align="center" justify="center" gap="6">
             <motion.div variants={itemVariants}>
               <Avatar
                 src="/static/logo/square.png"
@@ -63,15 +64,25 @@ export default function Route() {
               <HeroText text="pittorica" />
             </motion.div>
 
+            <motion.div variants={itemVariants} style={{ maxWidth: '600px' }}>
+              <Heading
+                as="p"
+                size="4"
+                weight="regular"
+                align="center"
+                style={{ opacity: 0.8 }}
+              >
+                Pittorica is a painterly, CSS-first UI framework that brings
+                elegant, lightweight structure to modern interfaces.
+              </Heading>
+            </motion.div>
+
             <motion.div variants={itemVariants}>
               <Box
                 style={{
                   maxWidth: '400px',
                   width: '100%',
-                  borderRadius: 'var(--pittorica-radius-3)',
                   overflow: 'hidden',
-                  boxShadow: 'var(--pittorica-shadow-4)',
-                  border: '1px solid var(--pittorica-slate-3)',
                 }}
               >
                 <Code language="bash" copyable showLineNumbers={false}>

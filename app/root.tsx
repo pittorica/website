@@ -183,7 +183,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Button
                 as={RouterLink}
                 to="/"
-                variant="text"
+                variant="tonal"
                 color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
@@ -194,7 +194,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Button
                 as={RouterLink}
                 to="/docs"
-                variant="text"
+                variant="tonal"
                 color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
@@ -205,7 +205,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Button
                 as={RouterLink}
                 to="/components"
-                variant="text"
+                variant="tonal"
                 color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
@@ -217,7 +217,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 as="a"
                 href="https://github.com/pittorica/pittorica"
                 target="_blank"
-                variant="text"
+                variant="tonal"
                 color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}

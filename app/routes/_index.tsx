@@ -398,6 +398,17 @@ export default function Route() {
                 </Carousel.Description>
               </Carousel.Item>
             </Carousel.Root>
+
+            <Flex justify="center" mt="4">
+              <Heading
+                as="p"
+                size="4"
+                weight="regular"
+                style={{ opacity: 0.6 }}
+              >
+                ...and many more components
+              </Heading>
+            </Flex>
           </Flex>
         </Container>
       </Section>

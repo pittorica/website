@@ -89,7 +89,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="pittorica-theme">
+      <body className="pittorica-theme" data-appearance={appearance}>
         <PittoricaTheme
           appearance={appearance}
           sourceColor={THEME_SOURCE_COLOR}
@@ -183,7 +183,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Flex>
           </Sheet>
 
-          {children}
+          <Box id="top">{children}</Box>
         </PittoricaTheme>
         <ScrollRestoration />
         <Scripts />

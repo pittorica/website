@@ -23,6 +23,7 @@ import {
   IconHome,
   IconLayoutSidebarLeftExpand,
   IconMoon,
+  IconPackage,
   IconRefresh,
   IconSun,
 } from '@tabler/icons-react';
@@ -194,24 +195,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Button
                 as={RouterLink}
                 to="/docs"
-                variant="tonal"
-                color="indigo"
+                variant="filled"
+                color="orange"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
               >
                 <IconBook size={18} />
-                Documentation
+                Get Started with Docs
               </Button>
               <Button
                 as={RouterLink}
-                to="/components"
+                to="/docs/installation"
                 variant="tonal"
                 color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
               >
-                <IconComponents size={18} />
-                Components
+                <IconPackage size={18} />
+                Installation
               </Button>
               <Button
                 as="a"

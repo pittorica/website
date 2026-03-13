@@ -17,7 +17,6 @@ import {
 
 import {
   IconAlertTriangle,
-  IconBook,
   IconBrandGithub,
   IconComponents,
   IconHome,
@@ -25,6 +24,7 @@ import {
   IconMoon,
   IconPackage,
   IconRefresh,
+  IconRocket,
   IconSun,
 } from '@tabler/icons-react';
 
@@ -185,7 +185,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 as={RouterLink}
                 to="/"
                 variant="tonal"
-                color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
               >
@@ -195,19 +194,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Button
                 as={RouterLink}
                 to="/docs"
-                variant="filled"
-                color="orange"
+                variant="tonal"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
               >
-                <IconBook size={18} />
-                Get Started with Docs
+                <IconRocket size={18} />
+                Quick start
               </Button>
               <Button
                 as={RouterLink}
                 to="/docs/installation"
                 variant="tonal"
-                color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
               >
@@ -219,7 +216,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 href="https://github.com/pittorica/pittorica"
                 target="_blank"
                 variant="tonal"
-                color="indigo"
                 onClick={() => setIsSheetOpen(false)}
                 style={{ justifyContent: 'flex-start' }}
               >
